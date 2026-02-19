@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Registration Portal</title>
+
+<style>
+body{
+    background-color: skyblue;
+    font-family: Arial;
+    margin:0;
+}
+
+/* Heading */
+h1{
+    text-align:center;
+    color:#003366;
+}
+
+/* Navigation */
+.nav{
+    text-align:center;
+    margin:20px;
+}
+
+.nav a{
+    background:#003366;
+    color:white;
+    padding:10px 15px;
+    text-decoration:none;
+    border-radius:8px;
+    margin:5px;
+    display:inline-block;
+}
+
+/* Section blocks */
+.section{
+    background:#003366;
+    color:white;
+    margin:20px auto;
+    padding:20px;
+    width:70%;
+    border-radius:10px;
+}
+
+input,select{
+    width:100%;
+    padding:8px;
+    margin:6px 0;
+}
+
+button{
+    padding:10px 20px;
+    background:white;
+    border:none;
+    cursor:pointer;
+}
+</style>
+
+<script>
+function showMsg(){
+    alert("Form Submitted Successfully");
+}
+</script>
+
+</head>
+
+<body>
+
+<h1>Student Registration Portal</h1>
+
+<div class="nav">
+<a href="#personal">Personal Information</a>
+<a href="#academic">Academic Details</a>
+<a href="#address">Address Information</a>
+<a href="#account">Account Credentials</a>
+</div>
+
+<form onsubmit="showMsg()">
+
+<!-- Section 1 -->
+<div class="section" id="personal">
+<h2>Personal Information</h2>
+Full Name:<input type="text">
+Date of Birth:<input type="date">
+
+Gender:
+<select>
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+
+Email:<input type="email">
+Mobile Number:<input type="text">
+</div>
+
+<!-- Section 2 -->
+<div class="section" id="academic">
+<h2>Academic Details</h2>
+Register Number:<input type="text">
+Degree Program:<input type="text">
+Department:<input type="text">
+Year of Study:<input type="text">
+</div>
+
+<!-- Section 3 -->
+<div class="section" id="address">
+<h2>Address Information</h2>
+Door Number:<input type="text">
+Street Name:<input type="text">
+City:<input type="text">
+State:<input type="text">
+Pincode:<input type="text">
+</div>
+
+<!-- Section 4 -->
+<div class="section" id="account">
+<h2>Account Credentials</h2>
+Username:<input type="text">
+Password:<input type="password">
+Confirm Password:<input type="password">
+
+<br><br>
+<button type="submit">Submit</button>
+</div>
+
+</form>
+
+</body>
+</html>
