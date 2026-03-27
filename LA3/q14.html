@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Styling App</title>
+
+    <style>
+        .bold {
+            font-weight: bold;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .smallcaps {
+            font-variant: small-caps;
+        }
+    </style>
+
+    <script>
+        function applyStyle(style) {
+            document.getElementById("text").className = style;
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Student Details -->
+    <h3>Name: Vinayak Nautiyal</h3>
+    <h3>Reg No: 24BCE2195</h3>
+
+    <hr>
+
+    <!-- Fieldset -->
+    <fieldset>
+        <legend>Text Styling</legend>
+
+        <input type="button" value="Bold" onclick="applyStyle('bold')">
+        <input type="button" value="Italic" onclick="applyStyle('italic')">
+        <input type="button" value="Small Caps" onclick="applyStyle('smallcaps')">
+    </fieldset>
+
+    <br>
+
+    <!-- Text -->
+    <p id="text">This is a sample text</p>
+
+</body>
+</html>

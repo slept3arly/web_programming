@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Font Customization Tool</title>
+
+    <script>
+        function applyStyles() {
+
+            var text = document.getElementById("text");
+
+            var size = document.getElementById("size").value;
+            var color = document.getElementById("color").value;
+            var bg = document.getElementById("bg").value;
+
+            text.style.fontSize = size + "px";
+            text.style.color = color;
+            text.style.backgroundColor = bg;
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Student Details -->
+    <h3>Name: Vinayak Nautiyal</h3>
+    <h3>Reg No: 24BCE2195</h3>
+
+    <hr>
+
+    <!-- Fieldset -->
+    <fieldset>
+        <legend>Customize Text</legend>
+
+        Font Size:
+        <input type="range" id="size" min="10" max="50" value="20"><br><br>
+
+        Text Color:
+        <input type="color" id="color"><br><br>
+
+        Background Color:
+        <input type="color" id="bg"><br><br>
+
+        <input type="button" value="Apply" onclick="applyStyles()">
+    </fieldset>
+
+    <br>
+
+    <!-- Text -->
+    <p id="text">Customize this text</p>
+
+</body>
+</html>

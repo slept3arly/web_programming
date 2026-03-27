@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Radio Button Selection</title>
+
+    <script>
+        function showSelected() {
+
+            var colors = document.getElementsByName("color");
+            var selected = "";
+
+            for (var i = 0; i < colors.length; i++) {
+                if (colors[i].checked) {
+                    selected = colors[i].value;
+                }
+            }
+
+            document.getElementById("result").innerHTML = "Selected Color: " + selected;
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Student Details -->
+    <h3>Name: Vinayak Nautiyal</h3>
+    <h3>Reg No: 24BCE2195</h3>
+
+    <hr>
+
+    <!-- Radio Buttons -->
+    <input type="radio" name="color" value="Red"> Red<br>
+    <input type="radio" name="color" value="Green"> Green<br>
+    <input type="radio" name="color" value="Blue"> Blue<br><br>
+
+    <!-- Button -->
+    <input type="button" value="Show Selected" onclick="showSelected()">
+
+    <!-- Output -->
+    <h3 id="result"></h3>
+
+</body>
+</html>

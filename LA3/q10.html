@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkbox Selection</title>
+
+    <script>
+        function showSelected() {
+
+            var subjects = document.getElementsByName("subject");
+            var selected = [];
+            var count = 0;
+
+            for (var i = 0; i < subjects.length; i++) {
+                if (subjects[i].checked) {
+                    selected.push(subjects[i].value);
+                    count++;
+                }
+            }
+
+            document.getElementById("result").innerHTML =
+                "Selected Count: " + count + "<br>" +
+                "Subjects: " + selected.join(", ");
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Student Details -->
+    <h3>Name: Vinayak Nautiyal</h3>
+    <h3>Reg No: 24BCE2195</h3>
+
+    <hr>
+
+    <!-- Checkboxes -->
+    <input type="checkbox" name="subject" value="Math"> Math<br>
+    <input type="checkbox" name="subject" value="Physics"> Physics<br>
+    <input type="checkbox" name="subject" value="Chemistry"> Chemistry<br>
+    <input type="checkbox" name="subject" value="Biology"> Biology<br><br>
+
+    <!-- Button -->
+    <input type="button" value="Show Selection" onclick="showSelected()">
+
+    <!-- Output -->
+    <h3 id="result"></h3>
+
+</body>
+</html>

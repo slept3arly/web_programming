@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+
+    <script>
+        function calculate(operation) {
+
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var result;
+
+            switch (operation) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+
+                case '-':
+                    result = num1 - num2;
+                    break;
+
+                case '*':
+                    result = num1 * num2;
+                    break;
+
+                case '/':
+                    if (num2 === 0) {
+                        result = "Cannot divide by zero";
+                    } else {
+                        result = num1 / num2;
+                    }
+                    break;
+
+                default:
+                    result = "Invalid operation";
+            }
+
+            document.getElementById("output").innerHTML = "Result: " + result;
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Student Details -->
+    <h3>Name: Vinayak Nautiyal</h3>
+    <h3>Reg No: 24BCE2195</h3>
+
+    <hr>
+
+    <!-- Inputs -->
+    Number 1:
+    <input type="number" id="num1" step="any"><br><br>
+
+    Number 2:
+    <input type="number" id="num2" step="any"><br><br>
+
+    <!-- Buttons -->
+    <input type="button" value="Add" onclick="calculate('+')">
+    <input type="button" value="Subtract" onclick="calculate('-')">
+    <input type="button" value="Multiply" onclick="calculate('*')">
+    <input type="button" value="Divide" onclick="calculate('/')">
+
+    <h3 id="output"></h3>
+
+</body>
+</html>

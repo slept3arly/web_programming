@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Information System</title>
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+    </style>
+
+    <script>
+        // Global array
+        var students = [];
+
+        // Function to add student
+        function addStudent(btn) {
+            var form = btn.form;
+
+            var name = form.elements["name"].value;
+            var reg = form.elements["reg"].value;
+            var course = form.elements["course"].value;
+
+            // Object with method
+            var student = {
+                name: name,
+                reg: reg,
+                course: course,
+                display: function () {
+                    return "<tr><td>" + this.name + "</td><td>" + this.reg + "</td><td>" + this.course + "</td></tr>";
+                }
+            };
+
+            // Add to array
+            students.push(student);
+
+            displayStudents();
+
+            form.reset();
+            form.elements["name"].focus();
+        }
+
+        // Display function
+        function displayStudents() {
+            var tableData = "<tr><th>Name</th><th>Reg No</th><th>Course</th></tr>";
+
+            for (var i = 0; i < students.length; i++) {
+                tableData += students[i].display();
+            }
+
+            document.getElementById("table").innerHTML = tableData;
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Student Details -->
+    <h3>Name: Vinayak Nautiyal</h3>
+    <h3>Reg No: 24BCE2195</h3>
+
+    <hr>
+
+    <!-- Form -->
+    <form>
+        Name: <input type="text" name="name"><br><br>
+        Reg No: <input type="text" name="reg"><br><br>
+        Course: <input type="text" name="course"><br><br>
+
+        <input type="button" value="Add Student" onclick="addStudent(this)">
+    </form>
+
+    <br>
+
+    <!-- Table -->
+    <table id="table"></table>
+
+</body>
+</html>

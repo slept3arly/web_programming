@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Print 1 to N</title>
+
+    <script>
+        function printNumbers() {
+
+            var n = parseInt(document.getElementById("num").value);
+            var i = 1;
+            var output = "";
+
+            while (i <= n) {
+                output += i + "<br>";
+                i++;
+            }
+
+            document.getElementById("result").innerHTML = output;
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Student Details -->
+    <h3>Name: Vinayak Nautiyal</h3>
+    <h3>Reg No: 24BCE2195</h3>
+
+    <hr>
+
+    <!-- Input -->
+    Enter N:
+    <input type="text" id="num"><br><br>
+
+    <!-- Button -->
+    <input type="button" value="Print Numbers" onclick="printNumbers()">
+
+    <!-- Output -->
+    <h3 id="result"></h3>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+body{
+    display: flex;
+    flex-direction:column;
+    font-family:'Times New Roman', Times, serif;
+    align-items: center;
+    text-align: center;
+    height:100vh;
+    margin:10%;
+}
+
+.login-box{
+    background-color: rgb(62, 105, 223);
+    border: 3px solid green;
+    border-radius:8px;
+    padding:25px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:16px;
+}
+
+.inside-box{
+    display:flex;
+    flex-direction: column;
+    
+}
+
+button {
+            padding: 8px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }

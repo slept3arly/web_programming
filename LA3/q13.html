@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Order Form</title>
+
+    <script>
+        function calculateTotal() {
+
+            var items = document.getElementsByName("product");
+            var total = 0;
+
+            for (let item of items) {
+                if (item.checked) {
+                    total += parseFloat(item.value);
+                }
+            }
+
+            document.getElementById("result").innerHTML =
+                "Total Price: ₹ " + total;
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Student Details -->
+    <h3>Name: Vinayak Nautiyal</h3>
+    <h3>Reg No: 24BCE2195</h3>
+
+    <hr>
+
+    <!-- Fieldset 1 -->
+    <fieldset>
+        <legend>Electronics</legend>
+        <input type="checkbox" name="product" value="5000"> Mobile (5000)<br>
+        <input type="checkbox" name="product" value="2000"> Headphones (2000)<br>
+    </fieldset>
+
+    <br>
+
+    <!-- Fieldset 2 -->
+    <fieldset>
+        <legend>Accessories</legend>
+        <input type="checkbox" name="product" value="500"> Mouse (500)<br>
+        <input type="checkbox" name="product" value="1000"> Keyboard (1000)<br>
+    </fieldset>
+
+    <br>
+
+    <!-- Button -->
+    <input type="button" value="Calculate Total" onclick="calculateTotal()">
+
+    <!-- Output -->
+    <h3 id="result"></h3>
+
+</body>
+</html>

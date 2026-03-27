@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rectangle Area</title>
+
+    <script>
+        function calculateArea() {
+
+            // Integer values
+            var lengthInt = 10;
+            var widthInt = 5;
+            var areaInt = lengthInt * widthInt;
+
+            // Floating-point values (loose typing)
+            var lengthFloat = 10.5;
+            var widthFloat = 5.2;
+            var areaFloat = lengthFloat * widthFloat;
+
+            // Display result
+            document.getElementById("result").innerHTML =
+                "Integer Area: " + areaInt + "<br>" +
+                "Float Area: " + areaFloat;
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Student Details -->
+    <h3>Name: Vinayak Nautiyal</h3>
+    <h3>Reg No: 24BCE2195</h3>
+
+    <hr>
+
+    <input type="button" value="Calculate Area" onclick="calculateArea()">
+
+    <h3 id="result"></h3>
+
+</body>
+</html>

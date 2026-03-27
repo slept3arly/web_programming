@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Gallery</title>
+
+    <style>
+        body {
+            margin: 20px;
+            font-family: Arial;
+        }
+
+        img {
+            width: 150px;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        /* Slightly improved spacing */
+        #img1 { top: 120px; left: 20px; }
+        #img2 { top: 150px; left: 80px; }
+        #img3 { top: 180px; left: 140px; }
+    </style>
+
+    <script>
+        var topIndex = 1;
+
+        function bringToFront(img) {
+            img.style.zIndex = ++topIndex;
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Student Details -->
+    <h3>Name: Vinayak Nautiyal</h3>
+    <h3>Reg No: 24BCE2195</h3>
+
+    <hr>
+
+    <!-- Images -->
+    <img id="img1" src="./Resources/child.jpg" onclick="bringToFront(this)">
+    <img id="img2" src="./Resources/fire.jpg" onclick="bringToFront(this)">
+    <img id="img3" src="./Resources/police.png" onclick="bringToFront(this)">
+
+</body>
+</html>

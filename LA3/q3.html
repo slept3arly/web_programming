@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Generator</title>
+
+    <script>
+        function generateEmail(btn) {
+            var form = btn.form;
+
+            var firstName = form.elements["fname"].value;
+            var lastName = form.elements["lname"].value;
+
+            var email = firstName + "." + lastName + "@park.edu";
+
+            document.getElementById("result").innerHTML = email;
+
+            form.reset();
+            form.elements["fname"].focus();
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Student Details -->
+    <h3>Name: Vinayak Nautiyal</h3>
+    <h3>Reg No: 24BCE2195</h3>
+
+    <hr>
+
+    <!-- Form -->
+    <form>
+        First Name: 
+        <input type="text" name="fname"><br><br>
+
+        Last Name: 
+        <input type="text" name="lname"><br><br>
+
+        <input type="button" value="Generate Email" onclick="generateEmail(this)">
+    </form>
+
+    <h3 id="result"></h3>
+
+</body>
+</html>
