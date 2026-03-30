@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Sets character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Title displayed in browser tab -->
     <title>Student Information System</title>
 
     <style>
+        /* Basic table styling for borders and spacing */
         table, th, td {
             border: 1px solid black;
             border-collapse: collapse;
@@ -13,44 +17,57 @@
     </style>
 
     <script>
-        // Global array
+        // Global array to store student objects
         var students = [];
 
-        // Function to add student
+        // Function to add a new student
         function addStudent(btn) {
+
+            // Access the form using the button reference
             var form = btn.form;
 
+            // Get input values from the form
             var name = form.elements["name"].value;
             var reg = form.elements["reg"].value;
             var course = form.elements["course"].value;
 
-            // Object with method
+            // Create a student object with properties and a method
             var student = {
                 name: name,
                 reg: reg,
                 course: course,
+
+                // Method to return table row HTML for the student
                 display: function () {
                     return "<tr><td>" + this.name + "</td><td>" + this.reg + "</td><td>" + this.course + "</td></tr>";
                 }
             };
 
-            // Add to array
+            // Add the student object to the array
             students.push(student);
 
+            // Update the table display
             displayStudents();
 
+            // Reset form fields after submission
             form.reset();
+
+            // Set focus back to the name field
             form.elements["name"].focus();
         }
 
-        // Display function
+        // Function to display all students in table
         function displayStudents() {
+
+            // Table header row
             var tableData = "<tr><th>Name</th><th>Reg No</th><th>Course</th></tr>";
 
+            // Loop through student array and add each row
             for (var i = 0; i < students.length; i++) {
                 tableData += students[i].display();
             }
 
+            // Insert generated rows into table
             document.getElementById("table").innerHTML = tableData;
         }
     </script>
@@ -64,18 +81,19 @@
 
     <hr>
 
-    <!-- Form -->
+    <!-- Form to input student data -->
     <form>
         Name: <input type="text" name="name"><br><br>
         Reg No: <input type="text" name="reg"><br><br>
         Course: <input type="text" name="course"><br><br>
 
+        <!-- Button to add student -->
         <input type="button" value="Add Student" onclick="addStudent(this)">
     </form>
 
     <br>
 
-    <!-- Table -->
+    <!-- Table to display student records -->
     <table id="table"></table>
 
 </body>

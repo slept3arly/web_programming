@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Hello World Program</title>
+        <!-- Title shown in the browser tab -->
+        <title>Hello World Program</title>
 
-    <script>
-        function displayHello(){
-            var msg=document.getElementById("message");
+        <script>
+            // Function that runs when the button is clicked
+            function displayHello(){
+                
+                // Get the element that has the id "message"
+                var msg = document.getElementById("message");
+                
+                // Replace the entire element with a new <h1> element
+                // This will remove the old text and show "Hello World"
                 msg.outerHTML = "<h1>Hello World</h1>";
-        }
-    </script>
+            }
+        </script>
     </head>
 
-    <bdoy>
-        <!-- Student Details -->
+    <body>
+        <!-- Student Details section -->
         <h3>Name: Vinayak Nautiyal</h3>
         <h3>Reg No: 24BCE2195</h3>
         <hr>
 
+        <!-- This message will be replaced when the button is clicked -->
         <h3 id="message">Click the button to display message</h3>
 
+        <!-- Button that triggers the displayHello() function -->
         <input type="button" value="Click Me" onclick="displayHello()">
-    </bdoy>
+    </body>
 </html>

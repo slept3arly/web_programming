@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Sets character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Title shown in browser tab -->
     <title>Rectangle Area</title>
 
     <script>
+        // Function to calculate area of rectangle
         function calculateArea() {
 
-            // Integer values
+            // Integer values for length and width
             var lengthInt = 10;
             var widthInt = 5;
+
+            // Area calculation using integer values
             var areaInt = lengthInt * widthInt;
 
-            // Floating-point values (loose typing)
+            // Floating-point values (demonstrates loose typing in JavaScript)
             var lengthFloat = 10.5;
             var widthFloat = 5.2;
+
+            // Area calculation using floating-point values
             var areaFloat = lengthFloat * widthFloat;
 
-            // Display result
+            // Display both results on the webpage
             document.getElementById("result").innerHTML =
                 "Integer Area: " + areaInt + "<br>" +
                 "Float Area: " + areaFloat;
@@ -33,8 +41,10 @@
 
     <hr>
 
+    <!-- Button to trigger area calculation -->
     <input type="button" value="Calculate Area" onclick="calculateArea()">
 
+    <!-- Result display area -->
     <h3 id="result"></h3>
 
 </body>

@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Sets character encoding to support standard text -->
     <meta charset="UTF-8">
+
+    <!-- Title displayed on browser tab -->
     <title>Email Generator</title>
 
     <script>
+        // Function to generate email when button is clicked
         function generateEmail(btn) {
+
+            // Access the form that contains the clicked button
             var form = btn.form;
 
+            // Get values entered by the user in input fields
             var firstName = form.elements["fname"].value;
             var lastName = form.elements["lname"].value;
 
+            // Create email using first name and last name
             var email = firstName + "." + lastName + "@park.edu";
 
+            // Display the generated email inside the result element
             document.getElementById("result").innerHTML = email;
 
+            // Reset the form fields after generating email
             form.reset();
+
+            // Set focus back to the first name field for convenience
             form.elements["fname"].focus();
         }
     </script>
@@ -23,23 +35,27 @@
 
 <body>
 
-    <!-- Student Details -->
+    <!-- Student Details section -->
     <h3>Name: Vinayak Nautiyal</h3>
     <h3>Reg No: 24BCE2195</h3>
 
     <hr>
 
-    <!-- Form -->
+    <!-- Form to take user input -->
     <form>
+        <!-- Input field for first name -->
         First Name: 
         <input type="text" name="fname"><br><br>
 
+        <!-- Input field for last name -->
         Last Name: 
         <input type="text" name="lname"><br><br>
 
+        <!-- Button to trigger email generation -->
         <input type="button" value="Generate Email" onclick="generateEmail(this)">
     </form>
 
+    <!-- Area where generated email will be displayed -->
     <h3 id="result"></h3>
 
 </body>

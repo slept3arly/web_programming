@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Defines character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Title shown in browser tab -->
     <title>Image Gallery</title>
 
     <style>
+        /* Basic page styling */
         body {
             margin: 20px;
             font-family: Arial;
         }
 
+        /* Style applied to all images */
         img {
-            width: 150px;
-            position: absolute;
-            cursor: pointer;
+            width: 150px;          /* Set image size */
+            position: absolute;    /* Allows overlapping */
+            cursor: pointer;       /* Indicates clickable images */
         }
 
-        /* Slightly improved spacing */
+        /* Positioning images slightly apart */
         #img1 { top: 120px; left: 20px; }
         #img2 { top: 150px; left: 80px; }
         #img3 { top: 180px; left: 140px; }
     </style>
 
     <script>
+        // Variable to track highest z-index
         var topIndex = 1;
 
+        // Function to bring clicked image to front
         function bringToFront(img) {
+
+            // Increase z-index so selected image appears on top
             img.style.zIndex = ++topIndex;
         }
     </script>

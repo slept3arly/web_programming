@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Defines character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Title shown in browser tab -->
     <title>Print 1 to N</title>
 
     <script>
+        // Function to print numbers from 1 to N
         function printNumbers() {
 
+            // Get user input and convert it to integer
             var n = parseInt(document.getElementById("num").value);
+
+            // Initialize counter starting from 1
             var i = 1;
+
+            // Variable to store output
             var output = "";
 
+            // Loop from 1 to N
             while (i <= n) {
+
+                // Append current number with line break
                 output += i + "<br>";
+
+                // Increment counter
                 i++;
             }
 
+            // Display result on the webpage
             document.getElementById("result").innerHTML = output;
         }
     </script>
@@ -29,14 +44,14 @@
 
     <hr>
 
-    <!-- Input -->
+    <!-- Input field for N -->
     Enter N:
     <input type="text" id="num"><br><br>
 
-    <!-- Button -->
+    <!-- Button to trigger printing -->
     <input type="button" value="Print Numbers" onclick="printNumbers()">
 
-    <!-- Output -->
+    <!-- Output display area -->
     <h3 id="result"></h3>
 
 </body>

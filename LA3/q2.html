@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Defines character encoding for proper text display -->
     <meta charset="UTF-8">
+    
+    <!-- Title displayed in the browser tab -->
     <title>Background Color Changer</title>
 
     <script>
+        // Function to change the background color of the page
         function changeColor(color) {
+            
+            // Access the body element and update its background color
             document.body.style.backgroundColor = color;
         }
     </script>
@@ -13,13 +19,13 @@
 
 <body>
 
-    <!-- Student Details -->
+    <!-- Student Details section -->
     <h3>Name: Vinayak Nautiyal</h3>
     <h3>Reg No: 24BCE2195</h3>
 
     <hr>
 
-    <!-- Buttons -->
+    <!-- Buttons that call changeColor() with different color values -->
     <input type="button" value="Red" onclick="changeColor('red')">
     <input type="button" value="Green" onclick="changeColor('green')">
     <input type="button" value="Blue" onclick="changeColor('blue')">

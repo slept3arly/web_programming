@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Defines character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Title shown in browser tab -->
     <title>Font Customization Tool</title>
 
     <script>
+        // Function to apply selected styles to the text
         function applyStyles() {
 
+            // Get the text element
             var text = document.getElementById("text");
 
+            // Get user-selected values
             var size = document.getElementById("size").value;
             var color = document.getElementById("color").value;
             var bg = document.getElementById("bg").value;
 
-            text.style.fontSize = size + "px";
-            text.style.color = color;
-            text.style.backgroundColor = bg;
+            // Apply styles dynamically
+            text.style.fontSize = size + "px";      // Set font size
+            text.style.color = color;              // Set text color
+            text.style.backgroundColor = bg;       // Set background color
         }
     </script>
 </head>
@@ -28,25 +35,29 @@
 
     <hr>
 
-    <!-- Fieldset -->
+    <!-- Fieldset for customization controls -->
     <fieldset>
         <legend>Customize Text</legend>
 
+        <!-- Range input for font size -->
         Font Size:
         <input type="range" id="size" min="10" max="50" value="20"><br><br>
 
+        <!-- Color picker for text color -->
         Text Color:
         <input type="color" id="color"><br><br>
 
+        <!-- Color picker for background -->
         Background Color:
         <input type="color" id="bg"><br><br>
 
+        <!-- Button to apply styles -->
         <input type="button" value="Apply" onclick="applyStyles()">
     </fieldset>
 
     <br>
 
-    <!-- Text -->
+    <!-- Text to be customized -->
     <p id="text">Customize this text</p>
 
 </body>

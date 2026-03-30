@@ -1,25 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Defines character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Title displayed in browser tab -->
     <title>Job Skills Form</title>
 
     <script>
+        // Function to validate selected skills
         function validateSkills() {
 
+            // Get all checkbox elements with name "skill"
             var skills = document.getElementsByName("skill");
+
+            // Array to store selected skills
             var selected = [];
 
+            // Loop through all checkboxes
             for (var i = 0; i < skills.length; i++) {
+
+                // Check if checkbox is selected
                 if (skills[i].checked) {
+
+                    // Add selected skill to array
                     selected.push(skills[i].value);
                 }
             }
 
+            // Check if at least 3 skills are selected
             if (selected.length < 3) {
+
+                // Display error message
                 document.getElementById("result").innerHTML =
                     "Error: Select at least 3 skills";
             } else {
+
+                // Display selected skills
                 document.getElementById("result").innerHTML =
                     "Selected Skills: " + selected.join(", ");
             }
@@ -35,17 +52,17 @@
 
     <hr>
 
-    <!-- Checkboxes -->
+    <!-- Checkboxes for selecting skills -->
     <input type="checkbox" name="skill" value="HTML"> HTML<br>
     <input type="checkbox" name="skill" value="CSS"> CSS<br>
     <input type="checkbox" name="skill" value="JavaScript"> JavaScript<br>
     <input type="checkbox" name="skill" value="Python"> Python<br>
     <input type="checkbox" name="skill" value="Java"> Java<br><br>
 
-    <!-- Button -->
+    <!-- Button to validate selection -->
     <input type="button" value="Submit" onclick="validateSkills()">
 
-    <!-- Output -->
+    <!-- Output display -->
     <h3 id="result"></h3>
 
 </body>

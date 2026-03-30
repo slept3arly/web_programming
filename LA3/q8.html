@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Defines character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Title displayed in browser tab -->
     <title>Multiplication Table</title>
 
     <script>
+        // Function to generate multiplication table
         function printTable() {
 
+            // Get user input and convert it to integer
             var num = parseInt(document.getElementById("num").value);
+
+            // Initialize counter
             var i = 1;
+
+            // Variable to store output
             var output = "";
 
+            // do-while loop ensures the loop runs at least once
             do {
-                output += num + " x " + i + " = " + (num * i) + "<br>";
-                i++;
-            } while (i <= 10);
 
+                // Create multiplication table row
+                output += num + " x " + i + " = " + (num * i) + "<br>";
+
+                // Increment counter
+                i++;
+
+            } while (i <= 10); // Loop runs until 10
+
+            // Display the generated table on the webpage
             document.getElementById("result").innerHTML = output;
         }
     </script>
@@ -29,14 +45,14 @@
 
     <hr>
 
-    <!-- Input -->
+    <!-- Input field for number -->
     Enter Number:
     <input type="text" id="num"><br><br>
 
-    <!-- Button -->
+    <!-- Button to generate table -->
     <input type="button" value="Generate Table" onclick="printTable()">
 
-    <!-- Output -->
+    <!-- Output display -->
     <h3 id="result"></h3>
 
 </body>
